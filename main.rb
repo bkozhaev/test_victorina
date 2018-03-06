@@ -11,6 +11,8 @@ question_nodes = REXML::Document.new(file).root.elements.to_a
 file.close
 
 questions = []
+right_answers = 0
+bad_answers = 0
 
 question_nodes.each do |q|
   questions << Question.from_node(q)
@@ -36,9 +38,14 @@ questions.each do |q|
   choosen_index = user_input.to_i - 1
   if q.variants[choosen_index] == q.right_variant
     puts "Правильно\n\r"
+    right_answers += 1
   elsif user_input == nil
     puts "Время вышло, ответ #{q.right_variant}\n\r"
   else
     puts "Неправильно, правильный ответ #{q.right_variant}\n\r"
+    bad_answers += 1
   end
 end
+
+puts "Итого: правильных ответов: #{right_answers}"
+puts "       неправильных ответов: #{bad_answers}"

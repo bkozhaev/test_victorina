@@ -18,4 +18,31 @@
       <variant>1958</variant>
     </variants>
   </question>
+  <question minutes="5">
+    <text>Сколько дней в высокосном году?</text>
+    <variants>
+      <variant>355</variant>
+      <variant>367</variant>
+      <variant right="true">366</variant>
+      <variant>369</variant>
+    </variants>
+  </question>
+  <question minutes="5">
+    <text>Ветер, движение которого, является доказательством взаимосвязи океана с материком?</text>
+    <variants>
+      <variant>Пассат</variant>
+      <variant>Зурбаган</variant>
+      <variant right="true">Муссон</variant>
+      <variant>Пристоль</variant>
+    </variants>
+  </question>
+  <question minutes="5">
+    <text>Континент, находящийся только в южном полушарии?</text>
+    <variants>
+      <variant>Зеландия</variant>
+      <variant>Южная Америка</variant>
+      <variant right="true">Австралия</variant>
+      <variant>Бали</variant>
+    </variants>
+  </question>
 </questions>
