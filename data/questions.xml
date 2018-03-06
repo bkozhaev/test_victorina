@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<questions>
+  <question minutes="5">
+    <text>Сколько байт в килобайте?</text>
+    <variants>
+      <variant>1000</variant>
+      <variant>2048</variant>
+      <variant right="true">1024</variant>
+      <variant>512</variant>
+    </variants>
+  </question>
+  <question minutes="5">
+    <text>В каком году Гагарин полетел в космос?</text>
+    <variants>
+      <variant>1962</variant>
+      <variant>1960</variant>
+      <variant right="true">1961</variant>
+      <variant>1958</variant>
+    </variants>
+  </question>
+</questions>
