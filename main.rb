@@ -20,27 +20,32 @@ end
 
 puts "Мини-викторина. Ответье на вопросы.\n"
 questions.each do |q|
-  puts "#{q.question} Время на ответ #{q.time} минут"
-
-  q.variants.shuffle.each_with_index do |variant, index|
+  puts "#{q.question} Время на ответ #{q.time} секунд"
+  var_for_present = q.variants.shuffle
+  var_for_present.each_with_index do |variant, index|
     puts "#{index + 1}. #{variant}"
   end
 
   user_input = nil
   begin
-    Timeout::timeout(q.time.to_i*60) do
+    Timeout::timeout(q.time.to_i) do
       user_input = gets.chomp
+      unless user_input.to_i.between?(1, 4)
+        puts "Вводите цифру из диапозона предложенных вариантов"
+        user_input = gets.chomp
+      end
     end
   rescue Timeout::Error
     user_input = nil
   end
 
-  choosen_index = user_input.to_i - 1
-  if q.variants[choosen_index] == q.right_variant
+  chosen_index = user_input.to_i - 1
+
+  if user_input.nil?
+    puts "Время вышло, ответ #{q.right_variant}\n\r"
+  elsif var_for_present[chosen_index] == q.right_variant
     puts "Правильно\n\r"
     right_answers += 1
-  elsif user_input == nil
-    puts "Время вышло, ответ #{q.right_variant}\n\r"
   else
     puts "Неправильно, правильный ответ #{q.right_variant}\n\r"
     bad_answers += 1
