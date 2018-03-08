@@ -16,9 +16,8 @@ bad_answers = 0
 user_input = nil
 
 victorina = Victorina.from_node(question_nodes)
-puts victorina.to_a
 
-puts "Мини-викторина. Ответье на вопросы.\n"
+puts "Мини-викторина. Ответье на вопросы.\n\r"
 victorina.to_a.each do |q|
   puts "#{q.question} Время на ответ #{q.time} секунд"
   var_for_present = q.variants.shuffle
